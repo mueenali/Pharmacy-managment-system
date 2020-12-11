@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0"
+      prefWidth="661.0" stylesheets="@../../css/main.css" xmlns="http://javafx.com/javafx/8.0.121"
+      xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Pane prefHeight="37.0" prefWidth="661.0">
+            <children>
+                <Label layoutX="15.0" layoutY="5.0" prefHeight="29.0" prefWidth="120.0" text="Edit Order">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="orderDateLabel" layoutX="380.0" layoutY="10.0" prefHeight="17.0" prefWidth="202.0"/>
+                <Button layoutX="623.0" layoutY="7.0" maxHeight="24.0" maxWidth="24.0" minHeight="24.0" minWidth="24.0"
+                        mnemonicParsing="false" onAction="#onCloseClick" prefHeight="24.0" prefWidth="24.0"
+                        styleClass="close-button"/>
+            </children>
+        </Pane>
+        <SplitPane dividerPositions="0.5402124430955993" prefHeight="493.0" prefWidth="661.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="438.0" prefWidth="340.0">
+                    <children>
+                        <TableView fx:id="tableMedicines" layoutX="3.0" layoutY="39.0" prefHeight="289.0"
+                                   prefWidth="352.0">
+                            <columns>
+                                <TableColumn fx:id="medicineNameColumn" prefWidth="128.7691774368286" text="Name"/>
+                                <TableColumn fx:id="medicinePriceColumn" prefWidth="63.53837585449219" text="Price"/>
+                                <TableColumn fx:id="medicineQuantityColumn" prefWidth="87.0" text="Quantity"/>
+                            </columns>
+                        </TableView>
+                        <Label layoutX="14.0" layoutY="10.0" text="Medicine"/>
+                        <TextField fx:id="searchField" layoutX="169.0" layoutY="7.0" promptText="Search.."/>
+                        <TextField fx:id="medicineField" disable="true" layoutX="78.0" layoutY="340.0" prefHeight="27.0"
+                                   prefWidth="139.0"/>
+                        <Label layoutX="14.0" layoutY="345.0" text="Medicine"/>
+                        <TextField fx:id="priceField" disable="true" layoutX="78.0" layoutY="382.0" prefHeight="27.0"
+                                   prefWidth="56.0"/>
+                        <Label layoutX="16.0" layoutY="387.0" text="Price"/>
+                        <TextField fx:id="quantityField" layoutX="215.0" layoutY="382.0" prefHeight="27.0"
+                                   prefWidth="86.0"/>
+                        <Label layoutX="148.0" layoutY="387.0" text="Quantity"/>
+                        <Button fx:id="buttonAddToOrder" layoutX="78.0" layoutY="433.0" mnemonicParsing="false"
+                                onAction="#onAddItemToOrder" prefHeight="37.0" prefWidth="154.0" text="Add to order"/>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="438.0" prefWidth="320.0">
+                    <children>
+                        <Label layoutX="14.0" layoutY="10.0" text="Order"/>
+                        <TableView fx:id="tableOrderItems" layoutY="39.0" prefHeight="289.0" prefWidth="299.0">
+                            <columns>
+                                <TableColumn fx:id="orderItemNameColumn" prefWidth="98.62496948242188" text="Name"/>
+                                <TableColumn fx:id="orderItemPriceColumn" prefWidth="65.0" text="Price"/>
+                                <TableColumn fx:id="orderItemQuantityColumn" prefWidth="69.0" text="Quantity"/>
+                                <TableColumn fx:id="orderItemTotalColumn" prefWidth="65.0" text="Total"/>
+                            </columns>
+                        </TableView>
+                        <Label layoutX="14.0" layoutY="346.0" text="Total Price:">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="totalPriceLabel" layoutX="119.0" layoutY="342.0" prefHeight="35.0"
+                               prefWidth="86.0">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <Button fx:id="deleteOrderItemButton" layoutX="223.0" layoutY="344.0" maxHeight="35.0"
+                                minHeight="35.0" mnemonicParsing="false" onAction="#onDeleteOrderItem" prefHeight="35.0"
+                                prefWidth="65.0" text="Delete"/>
+                        <Button layoutX="94.0" layoutY="399.0" mnemonicParsing="false" onAction="#onConfirmOrder"
+                                prefHeight="63.0" prefWidth="111.0" text="Update Order"/>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</VBox>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0"
+      prefWidth="600.0" stylesheets="@../../css/main.css" xmlns="http://javafx.com/javafx/8.0.141"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.retail.order.controllers.user.UserController">
+    <VBox prefHeight="500.0" prefWidth="600.0">
+        <children>
+            <Label prefHeight="40.0" text="Users">
+                <padding>
+                    <Insets left="20.0" right="20.0"/>
+                </padding>
+                <VBox.margin>
+                    <Insets right="20.0"/>
+                </VBox.margin>
+            </Label>
+            <TableView fx:id="tableUsers" prefHeight="400.0" prefWidth="600.0">
+                <columns>
+                    <TableColumn fx:id="nameColumn" prefWidth="124.0" text="Name"/>
+                    <TableColumn fx:id="usernameColumn" prefWidth="109.0" text="Username"/>
+                    <TableColumn fx:id="contactNumberColumn" prefWidth="110.0" text="Contact Number"/>
+                    <TableColumn fx:id="addressColumn" prefWidth="157.0" text="Address"/>
+                    <TableColumn fx:id="roleColumn" prefWidth="99.0" text="User Role"/>
+                </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="600.0">
+                <children>
+                    <TextField fx:id="searchField" prefHeight="25.0" prefWidth="200.0" promptText="Search...">
+                        <HBox.margin>
+                            <Insets right="30.0"/>
+                        </HBox.margin>
+                    </TextField>
+                    <Button fx:id="buttonAdd" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false"
+                            onAction="#addAction" prefHeight="35.0" prefWidth="70.0" text="Add" wrapText="true">
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                        </HBox.margin>
+                    </Button>
+                    <Button fx:id="buttonEdit" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false"
+                            onAction="#editAction" prefHeight="35.0" prefWidth="70.0" text="Edit" wrapText="true">
+                        <HBox.margin>
+                            <Insets left="10.0" right="10.0"/>
+                        </HBox.margin>
+                    </Button>
+                    <Button fx:id="buttonDelete" maxHeight="30.0" minHeight="35.0" mnemonicParsing="false"
+                            onAction="#deleteAction" prefHeight="35.0" prefWidth="70.0" text="Delete" wrapText="true">
+                        <HBox.margin>
+                            <Insets left="10.0" right="10.0"/>
+                        </HBox.margin>
+                    </Button>
+                </children>
+            </HBox>
+        </children>
+    </VBox>
+</VBox>

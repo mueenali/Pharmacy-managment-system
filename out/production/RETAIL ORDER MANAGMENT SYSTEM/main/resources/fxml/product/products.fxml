@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0"
+      prefWidth="600.0" stylesheets="@../../css/main.css" xmlns="http://javafx.com/javafx/8.0.141"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.retail.order.controllers.product.ProductsController">
+    <VBox prefHeight="500.0" prefWidth="600.0">
+        <children>
+            <Label prefHeight="40.0" text="Products">
+                <padding>
+                    <Insets left="20.0" right="20.0"/>
+                </padding>
+                <VBox.margin>
+                    <Insets right="20.0"/>
+                </VBox.margin>
+            </Label>
+            <TableView fx:id="tableProducts" prefHeight="400.0" prefWidth="600.0">
+                <columns>
+                    <TableColumn fx:id="nameColumn" prefWidth="169.0" text="Name"/>
+                    <TableColumn fx:id="priceColumn" prefWidth="64.0" text="Price"/>
+                    <TableColumn fx:id="quantityColumn" prefWidth="64.0" text="Quantity"/>
+                    <TableColumn fx:id="isFragileColumn" prefWidth="86.0" text="Is Fragile"/>
+                    <TableColumn fx:id="descriptionColumn" prefWidth="239.0" text="Description"/>
+                </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="600.0">
+                <children>
+                    <TextField fx:id="searchField" prefHeight="25.0" prefWidth="200.0" promptText="Search...">
+                        <HBox.margin>
+                            <Insets right="30.0"/>
+                        </HBox.margin>
+                    </TextField>
+                    <Button fx:id="buttonAdd" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false"
+                            onAction="#addAction" prefHeight="35.0" prefWidth="70.0" text="Add" wrapText="true">
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                        </HBox.margin>
+                    </Button>
+                    <Button fx:id="buttonEdit" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false"
+                            onAction="#editAction" prefHeight="35.0" prefWidth="70.0" text="Edit" wrapText="true">
+                        <HBox.margin>
+                            <Insets left="10.0" right="10.0"/>
+                        </HBox.margin>
+                    </Button>
+                    <Button fx:id="buttonDelete" maxHeight="30.0" minHeight="35.0" mnemonicParsing="false"
+                            onAction="#deleteAction" prefHeight="35.0" prefWidth="70.0" text="Delete" wrapText="true">
+                        <HBox.margin>
+                            <Insets left="10.0" right="10.0"/>
+                        </HBox.margin>
+                    </Button>
+                </children>
+            </HBox>
+        </children>
+    </VBox>
+</VBox>
